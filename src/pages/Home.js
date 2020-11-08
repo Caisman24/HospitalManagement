@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react';
-import FirstContainer from './FirstContainer';
+import FirstContainer from '../components/Home/FirstContainer';
 
 class Home extends Component {
   render() {

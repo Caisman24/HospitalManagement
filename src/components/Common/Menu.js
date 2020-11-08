@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import '../../static/menu.css';
-import Home from '../Home/Home';
-import About from '../About/About';
-import Contact from '../Contact/Contact';
-import mainLogo from '../../static/logo.png';
+import Home from '../../pages/Home';
+import About from '../../pages/About';
+import Contact from '../../pages/Contact';
+import mainLogo from '../../assets/logo.png';
 
 class Menu extends Component {
   render() {
@@ -17,7 +17,7 @@ class Menu extends Component {
 
           <ul className="navbar-default">
             <li>
-              <Link to="/about">Home</Link>
+              <Link to="/">Home</Link>
             </li>
             <li>
               <Link to="/about">About</Link>

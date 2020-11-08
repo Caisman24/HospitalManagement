@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import bigLogo from '../../static/medicine.svg';
+import bigLogo from '../../assets/medicine.svg';
 import '../../static/home.css';
 
 class FirstContainer extends Component {
