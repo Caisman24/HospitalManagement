@@ -1,27 +1,42 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 nav{
+    position: absolute;
+    display: flex;
+    padding: 1rem 2rem;
     width: 100%;
+    z-index: 1;
 }
 
 .navbar-default{
-    text-align: center;
-    overflow: hidden;
-    list-style-type: none;
+    align-items: center;
     display: flex;
-    padding: 2rem;
+    list-style: none;
+    overflow: hidden;
+    width: 100%;
+    justify-content: center;
 }
 
 .navbar-default li{
-    margin-right: 2rem;
     font-size: 1rem;
+    padding: 0.5em 1em;
     overflow: hidden;
     cursor: pointer;
 }
 
 .navbar-default li a{
     text-decoration: none;
+}
+
+.navbar-default li a:hover{
+    background-color: #ccc7d3;
+}
+
+.navbar-default a{
+    text-decoration: none;
+    color: #111111;
 }

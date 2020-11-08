@@ -4,15 +4,20 @@ import '../../static/menu.css';
 import Home from '../Home/Home';
 import About from '../About/About';
 import Contact from '../Contact/Contact';
+import mainLogo from '../../static/logo.png';
 
 class Menu extends Component {
   render() {
     return (
       <Router>
         <nav>
+          <Link to="/">
+            <img src={mainLogo} alt="LOGO"></img>
+          </Link>
+
           <ul className="navbar-default">
             <li>
-              <Link to="/">Home</Link>
+              <Link to="/about">Home</Link>
             </li>
             <li>
               <Link to="/about">About</Link>

@@ -1,0 +1,43 @@
+.hero-section{
+    background-image: linear-gradient(120deg, #e0c3fc 0%, #8ec5fc 100%, transparent 70%, transparent 100%);
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.section p{
+    padding-right: 1rem;
+    color: #5a4d70;
+}
+
+.hero-col{
+    padding: clamp(1rem, 8vw, 6rem);
+    max-width: 50%;
+}
+
+.hero-img{
+    width: clamp(250px, 30vw, 500px);
+}
+
+.custom-shape-divider-bottom-1604866742 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1604866742 svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 107px;
+    transform: rotateY(180deg);
+}
+
+.custom-shape-divider-bottom-1604866742 .shape-fill {
+    fill: #FFFFFF;
+}

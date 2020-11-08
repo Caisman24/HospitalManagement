@@ -1,11 +1,12 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
+import FirstContainer from './FirstContainer';
 
 class Home extends Component {
   render() {
     return (
-      <div>
-        <p>This is home page</p>
-      </div>
+      <Fragment>
+        <FirstContainer></FirstContainer>
+      </Fragment>
     );
   }
 }
