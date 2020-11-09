@@ -6,20 +6,25 @@
     align-items: center;
 }
 
-.section p{
-    padding-right: 1rem;
-    color: #5a4d70;
-}
-
 .hero-col{
     padding: clamp(1rem, 8vw, 6rem);
     max-width: 50%;
+}
+
+.hero-col h2{
+    margin-bottom: 1rem;
+}
+
+.hero-col p{
+    padding-right: 1rem;
+    color: #5a4d70;
 }
 
 .hero-img{
     width: clamp(250px, 30vw, 500px);
 }
 
+/*The form asset*/
 .custom-shape-divider-bottom-1604866742 {
     position: absolute;
     bottom: 0;
@@ -40,4 +45,55 @@
 
 .custom-shape-divider-bottom-1604866742 .shape-fill {
     fill: #FFFFFF;
+}
+
+/* SECOND SECTION*/ /* SECOND SECTION*/ /* SECOND SECTION*/ /* SECOND SECTION*/ /* SECOND SECTION*//* SECOND SECTION*/ /* SECOND SECTION*/
+.service-section {
+    max-height: 100vh;
+    width: 114em;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    box-sizing: border-box;
+    max-width: 100%;
+}
+
+.grid-item{
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.service-card{
+    border-radius: 0.4rem;
+    overflow: hidden;
+    box-shadow: 0 3rem 6rem rgba(0, 0, 0, 0.1);
+    transition: 0.2s;
+    background-color: #fff;
+    margin: 3rem;
+}
+
+.service-section img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.service-card-content {
+    padding: 3rem;
+    text-align: center;
+}
+
+.card-header {
+    font-size: 5vh;
+    font-weight: 500;
+    color: #0d0d0d;
+    margin-bottom: 1.5rem;
+}
+
+.card-text {
+    font-size: 2.5vh;
+    letter-spacing: 0.1rem;
+    line-height: 1.7;
+    color: #3d3d3d;
+    margin-bottom: 2.5rem;
 }
