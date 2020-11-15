@@ -4,28 +4,29 @@
     box-sizing: border-box;
 }
 
-nav{
+.nav-header{
     position: absolute;
     display: flex;
-    padding: 1rem 2rem;
+    padding: 1rem 10%;
     width: 100%;
     z-index: 1;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .navbar-default{
-    align-items: center;
     display: flex;
     list-style: none;
     overflow: hidden;
-    width: 100%;
     justify-content: center;
 }
 
-.navbar-default li{
+.nav-header li{
     font-size: 1rem;
     padding: 0.5em 1em;
     overflow: hidden;
     cursor: pointer;
+    color: white;
 }
 
 .navbar-default li a{
@@ -36,7 +37,23 @@ nav{
     background-color: #ccc7d3;
 }
 
-.navbar-default a{
+.nav-header a{
     text-decoration: none;
-    color: #111111;
+    color: white;
+}
+
+.navbar-right{
+    float: right;
+    display: flex;
+}
+
+.nav-button {
+    background: #00adff;
+    border-radius: 50px;
+    margin-left: 0.75rem;
+    color: white;
+}
+
+.nav-button a:hover{
+    color: #333;
 }

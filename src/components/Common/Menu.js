@@ -10,7 +10,7 @@ class Menu extends Component {
   render() {
     return (
       <Router>
-        <nav>
+        <nav className="nav-header">
           <Link to="/">
             <img src={mainLogo} alt="LOGO"></img>
           </Link>
@@ -24,6 +24,13 @@ class Menu extends Component {
             </li>
             <li>
               <Link to="contact">Contact</Link>
+            </li>
+          </ul>
+
+          <ul className="navbar-right">
+            <li>Login</li>
+            <li className="nav-button">
+              <Link to="/">Signup</Link>
             </li>
           </ul>
         </nav>

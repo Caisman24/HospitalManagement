@@ -1,0 +1,154 @@
+.contact-hero-section{
+    background-image: linear-gradient(120deg, #e0c3fc 0%, #8ec5fc 100%, transparent 70%, transparent 100%);
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.contact-hero-col{
+    position: absolute;
+    top: 30vh;
+    height: 10vh;
+    left:50%;
+    width: 70vh;
+    margin-left: -35vh;
+}
+
+.contact-hero-col h1{
+    text-align: center;
+    font-size: 9vh;
+    color: white;
+}
+
+.grid-contact{
+    width: 100%;
+    overflow: hidden;
+}
+
+.hero-contact{
+    margin-top: 73vh;
+    text-align: center;
+    justify-content: center;
+    font-size: 3vh;
+    margin-bottom: 10vh;
+}
+.hero-contact p{
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: .10em;
+    margin-bottom: .5em;
+    font-size: 1rem;
+}
+
+.hero-contact a{
+    font-family: sans-serif;
+    font-size: 1.80rem;
+    text-decoration: none;
+    color: white;
+}
+
+.or-contact{
+    text-align: center;
+    justify-content: center;
+}
+
+.waypoint-grid{
+    margin-left: 27%;
+    margin-right: 27%;
+    text-align: center;
+    justify-content: center;
+}
+
+.or-contact hr{
+    height: 1px;
+    position: relative;
+    background-color: rgba(124,124,255,.2);
+}
+
+.or-contact p{
+    text-transform: uppercase;
+    color: white;
+    font-size: 1rem;
+    display: flex;
+    flex-direction: row;
+    letter-spacing: .24em;
+}
+
+.or-contact p:before, p:after{
+    content: "";
+    flex: 1 1;
+    border-bottom: 1px inset  #5bb1cd;
+    margin: auto;
+  }
+
+.or-contact p:before{
+      margin-right: 0.25em
+  }
+
+.or-contact p:after{
+    margin-left: 0.25em
+}
+
+/* Now comes the second section */
+
+.contact-form-section{
+    background-image: linear-gradient(120deg, #8ec5fc 0%, #e0c3fc 100%, transparent 70%, transparent 100%);
+    position: relative;
+    height: 100vh;   
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-form-title{
+    padding: 5% 0 5% 0;
+    text-align: center;
+    font-size: 1.75rem;
+}
+
+
+.contact-form-form{
+    width: 100%;
+    text-align: center;
+}
+
+.contact-form-row-text{
+    margin-left: 25%;
+    margin-right: 25%;
+    margin-bottom: 2em;
+}
+
+input, textarea{
+    padding: 15px 19px;
+    border-radius: 30px;
+    border: 1px solid #1f1b27;
+    background-color: #1f1b27;
+    outline: none;
+    font-size: 1rem;
+    line-height: 2em;
+    width: 100%;
+    color: white;
+}
+
+textarea{
+    min-height: 9rem;
+    min-width: 100%;
+    max-width: 100%;
+}
+
+input[type='checkbox']{
+    width: auto;
+}
+
+.contact-form-row-text button{
+    background: #00adff;
+    border-radius: 50px;
+    color: white;
+    border: none;
+    min-height: 3.3em;
+    min-width: 6rem;
+}
+
+label::before{
+    content: "";
+}
