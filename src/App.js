@@ -1,11 +1,14 @@
 import React, { Fragment } from 'react';
 import Menu from './components/Common/Menu';
 import './components/Common/Menu';
+import { AuthProvider } from './contexts/AuthContext';
 
 function App() {
   return (
     <Fragment>
-      <Menu></Menu>
+      <AuthProvider>
+        <Menu></Menu>
+      </AuthProvider>
     </Fragment>
   );
 }

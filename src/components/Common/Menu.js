@@ -5,6 +5,8 @@ import Home from '../../pages/Home';
 import About from '../../pages/About';
 import Contact from '../../pages/Contact';
 import mainLogo from '../../assets/logo.png';
+import SignUp from '../../pages/Register';
+import SignIn from '../../pages/Login';
 
 class Menu extends Component {
   render() {
@@ -28,9 +30,12 @@ class Menu extends Component {
           </ul>
 
           <ul className="navbar-right">
-            <li>Login</li>
+            <li>
+              <Link to="/login">Login</Link>
+            </li>
+
             <li className="nav-button">
-              <Link to="/">Signup</Link>
+              <Link to="/register">Signup</Link>
             </li>
           </ul>
         </nav>
@@ -38,6 +43,8 @@ class Menu extends Component {
         <Switch>
           <Route path="/about" component={About}></Route>
           <Route path="/contact" component={Contact}></Route>
+          <Route path="/login" component={SignIn}></Route>
+          <Route path="/register" component={SignUp}></Route>
           <Route path="/" component={Home}></Route>
         </Switch>
       </Router>
