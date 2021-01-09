@@ -7,6 +7,7 @@ import Contact from '../../pages/Contact';
 import mainLogo from '../../assets/logo.png';
 import SignUp from '../../pages/Register';
 import SignIn from '../../pages/Login';
+import ForgotPassword from '../../pages/ForgotPassword';
 
 class Menu extends Component {
   render() {
@@ -45,6 +46,7 @@ class Menu extends Component {
           <Route path="/contact" component={Contact}></Route>
           <Route path="/login" component={SignIn}></Route>
           <Route path="/register" component={SignUp}></Route>
+          <Route path="/forgot-password" component={ForgotPassword}></Route>
           <Route path="/" component={Home}></Route>
         </Switch>
       </Router>

@@ -1,5 +1,26 @@
 import React, { Fragment } from 'react';
 import '../static/contact.css';
+import emailjs from 'emailjs-com';
+
+function sendEmail(e) {
+  e.preventDefault();
+  emailjs
+    .sendForm(
+      'service_bssxzdh',
+      'template_ryxwc9i',
+      e.target,
+      'user_IVAEMkMhoZXCo93VW59QL'
+    )
+    .then(
+      (result) => {
+        console.log(result.text);
+      },
+      (error) => {
+        console.log(error.text);
+      }
+    );
+  e.target.reset();
+}
 
 export default function Contact() {
   return (
@@ -27,13 +48,14 @@ export default function Contact() {
         </div>
 
         <div className="contact-form-form">
-          <form>
+          <form onSubmit={sendEmail}>
             <div className="contact-form-row-text">
               <input
                 type="text"
                 autoComplete="off"
                 placeholder="Your full name"
                 required="required"
+                name="email"
               />
             </div>
 
@@ -43,6 +65,7 @@ export default function Contact() {
                 autoComplete="off"
                 placeholder="Enter your email adress"
                 required="required"
+                name="email"
               />
             </div>
 
@@ -51,23 +74,8 @@ export default function Contact() {
                 autoComplete="off"
                 required="required"
                 placeholder="Describe your problem"
+                name="message"
               ></textarea>
-            </div>
-
-            <div className="contact-form-row-text">
-              <label htmlFor="gdpr">
-                <input
-                  autoComplete="off"
-                  type="checkbox"
-                  required="required"
-                  id="gdpr"
-                />
-                <p>I Have read and accepted the Privacy Policy</p>
-                <p>
-                  (Your information is not stored on our website. Your message
-                  is emailed directly to us)
-                </p>
-              </label>
             </div>
 
             <div className="contact-form-row-text">

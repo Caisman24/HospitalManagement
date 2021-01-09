@@ -1,11 +1,12 @@
-import React, { useState, Fragment, useRef } from 'react';
+import React, { useState, useRef } from 'react';
 import { useAuth } from '../contexts/AuthContext';
-import { useHistory } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faLock, faUser } from '@fortawesome/free-solid-svg-icons';
+import { Link, useHistory } from 'react-router-dom';
 import '../static/login.css';
+import { Form, Button, Card, Alert } from 'react-bootstrap';
 
 export default function Register() {
+  const firstNameRef = useRef();
+  const lastNameRef = useRef();
   const emailRef = useRef();
   const passwordRef = useRef();
   const passwordConfirmRef = useRef();
@@ -15,6 +16,10 @@ export default function Register() {
   const history = useHistory();
 
   async function handleSubmit(e) {
+    const basicInfo = {
+      firstName: firstNameRef.current && firstNameRef.current.value,
+      lastName: lastNameRef.current && lastNameRef.current.value,
+    };
     e.preventDefault();
 
     if (passwordRef.current.value !== passwordConfirmRef.current.value) {
@@ -22,76 +27,60 @@ export default function Register() {
     }
 
     try {
-      setError('');
       setLoading(true);
-      await signup(emailRef.current.value, passwordRef.current.value);
+      await signup(
+        emailRef.current.value,
+        passwordRef.current.value,
+        basicInfo
+      );
       history.push('/');
-    } catch {
-      setError('Failed to create an account');
-    }
+    } catch {}
 
     setLoading(false);
   }
 
   return (
-    <Fragment>
-      <div className="container">
-        <div className="login-content">
-          <form onSubmit={handleSubmit}>
-            <h2 className="title">Welcome</h2>
-
-            <div className="input-div one">
-              <div className="i">
-                <FontAwesomeIcon icon={faUser} />
-              </div>
-
-              <div className="div">
-                <input
-                  type="text"
-                  className="input"
-                  ref={emailRef}
-                  placeholder="Email"
-                />
-              </div>
-            </div>
-
-            <div className="input-div pass">
-              <div className="i">
-                <FontAwesomeIcon icon={faLock} />
-              </div>
-              <div className="div">
-                <input
+    <div className="login-container">
+      <div className="login-content">
+        <Card>
+          <Card.Body>
+            <h2 className="text-center mb-4">Sign Up</h2>
+            {error && <Alert variant="danger">{error}</Alert>}
+            <Form onSubmit={handleSubmit}>
+              <Form.Group id="first-name">
+                <Form.Label>First Name</Form.Label>
+                <Form.Control type="text" required ref={firstNameRef} />
+              </Form.Group>
+              <Form.Group id="last-name">
+                <Form.Label>Last Name</Form.Label>
+                <Form.Control type="text" required ref={lastNameRef} />
+              </Form.Group>
+              <Form.Group id="email">
+                <Form.Label>Email</Form.Label>
+                <Form.Control type="email" ref={emailRef} required />
+              </Form.Group>
+              <Form.Group id="password">
+                <Form.Label>Password</Form.Label>
+                <Form.Control type="password" ref={passwordRef} required />
+              </Form.Group>
+              <Form.Group id="password-confirm">
+                <Form.Label>Password Confirmation</Form.Label>
+                <Form.Control
                   type="password"
-                  className="input"
-                  ref={passwordRef}
-                  placeholder="Password"
-                />
-              </div>
-            </div>
-
-            <div className="input-div repass">
-              <div className="i">
-                <FontAwesomeIcon icon={faLock} />
-              </div>
-              <div className="div">
-                <input
-                  type="password"
-                  className="input"
                   ref={passwordConfirmRef}
-                  placeholder="Confirm Password"
+                  required
                 />
-              </div>
-            </div>
-
-            <input
-              type="submit"
-              className="btn"
-              value="Register"
-              disabled={loading}
-            />
-          </form>
+              </Form.Group>
+              <Button disabled={loading} className="w-100" type="submit">
+                Sign Up
+              </Button>
+            </Form>
+          </Card.Body>
+        </Card>
+        <div className="w-100 text-center mt-2">
+          Already have an account? <Link to="/login">Log In</Link>
         </div>
       </div>
-    </Fragment>
+    </div>
   );
 }
