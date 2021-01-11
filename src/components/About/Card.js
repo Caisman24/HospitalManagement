@@ -6,7 +6,7 @@ class Card extends Component {
     return (
       <div className="card-view">
         <div className="card-title">
-          <h1>Muita</h1>
+          <h1>Test</h1>
         </div>
 
         <div className="card-date">

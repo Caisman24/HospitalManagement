@@ -3,6 +3,7 @@ import '../static/about.css';
 import Card from '.././components/About/Card';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
+import { Form } from 'react-bootstrap';
 
 function MyVerticallyCenteredModal(props) {
   return (
@@ -14,19 +15,24 @@ function MyVerticallyCenteredModal(props) {
     >
       <Modal.Header closeButton>
         <Modal.Title id="contained-modal-title-vcenter">
-          Modal heading
+          Create Appoinment
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <h4>Centered Modal</h4>
-        <p>
-          Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
-          dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
-          consectetur ac, vestibulum at eros.
-        </p>
+        <Form>
+          <Form.Group id="modal-appointment-category">
+            <Form.Label>Category</Form.Label>
+            <Form.Control type="text" required />
+          </Form.Group>
+          <Form.Group id="modal-appointment-date">
+            <Form.Label>Date</Form.Label>
+            <Form.Control type="text" required />
+          </Form.Group>
+        </Form>
       </Modal.Body>
       <Modal.Footer>
         <Button onClick={props.onHide}>Close</Button>
+        <Button onClick={props.onHide}>Add</Button>
       </Modal.Footer>
     </Modal>
   );
